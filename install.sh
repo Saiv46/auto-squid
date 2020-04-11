@@ -26,9 +26,9 @@ exec_cmd() {
 setup() {
 cd /home/
 
-print_status "Installing cURL & Git..."
+print_status "Installing packages..."
 exec_cmd 'apt-get update > /dev/null 2>&1'
-exec_cmd 'apt-get install -y curl git > /dev/null 2>&1'
+exec_cmd 'apt-get install -y curl git libsystemd-dev > /dev/null 2>&1'
 
 print_status "Installing NodeJS..."
 exec_cmd "curl -sL https://deb.nodesource.com/setup_${NODE_VER}.x | bash -"
@@ -59,7 +59,7 @@ Alias=minecraft
 WantedBy=multi-user.target" > /etc/systemd/system/flying-squid.service
 
 print_status "Adding auto-update to crontab..."
-exec_cmd 'curl -sL -o /etc/cron.daily/ https://raw.githubusercontent.com/Saiv46/auto-squid/master/install.sh'
+exec_cmd 'curl -sL -o /etc/cron.daily/ https://raw.githubusercontent.com/Saiv46/auto-squid/master/update.sh'
 
 print_status "Enabling daemon..."
 exec_cmd 'systemctl daemon-reload > /dev/null 2>&1'
