@@ -1,7 +1,11 @@
 # auto-squid
 
-./install.sh
+Install and update [flying-squid](https://github.com/Saiv46/flying-squid) with ease!
 
-then add in a cron ./update.sh
+Installation:
 
-Auto-update flying-squid without githook
+```sh
+$ curl -sL https://raw.githubusercontent.com/Saiv46/auto-squid/master/install.sh | sudo -E bash -
+```
+
+The server will auto-update every day at 00:00 (local time).
