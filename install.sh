@@ -1,6 +1,6 @@
 #!/bin/bash
 export DEBIAN_FRONTEND=noninteractive
-REPO_OWNER='Saiv46'
+REPO_OWNER='PrismarineJS'
 NODE_VER='12'
 
 print_status() {
